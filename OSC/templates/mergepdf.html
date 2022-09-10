@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>One Shop Converter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <title>BizLand Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href ="{{ url_for('static', filename='vendor/aos/aos.css') }}"  rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.btn-filestack:hover {
+  background-color: #cc4343;
+  box-shadow: 0 2px 2px 0 rgba(256,256,256,0.24), 0 6px 6px 0 rgba(231, 223, 223, 0.19);
+
+}
+
+.btn-filestack_1 {
+  background-color: rgb(255, 255, 255);
+  border-color: #524f4e;
+  border: 1px solid rgb(68, 65, 65);
+  padding: 10px;
+  border-radius: 25px;
+  margin-left: 62vh;
+}
+
+.btn-widget, .btn-widget:active {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 17px;
+  padding: 4px 30px 5px 40px;
+  height: 34px;
+  /* Set the path of your logo */
+  background-image: url('https://www.filestack.com/favicon.ico');
+  background-size: 16px 16px;
+  background-position: 16px 8px;
+  background-repeat: no-repeat;
+  line-height: 23px;
+}
+.dropzone {
+	border-radius: 100px;
+    margin: 100px;
+    margin-left: 200px;
+    text-align: center;
+}
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+
+.btn-widget::after {
+  position: relative;
+  content: "\21a9";
+  color: rgb(239,74,37);
+  top: -0px;
+  right: -11px;
+  width: 1px;
+  height: 12px;
+  background: 0 0 no-repeat;
+}
+
+.upload-icon {
+	margin: 25px 2px 10px 2px;
+}
+
+
+.logo1 {
+
+width: auto;
+height: 80px;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center" style = "margin-right: 5px;">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="{{ url_for('to_home')}}" ><img class="logo1" style="margin-left:-120px" src="/static/img/trafo.png" ></a>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="active"><a href="{{ url_for('to_home')}}">Home</a>
+          <li class="active"><a href="{{ url_for('merge_pdf')}}">Merge PDF</a></li> 
+          <li class="active"><a href="{{ url_for('split_pdf')}}">Split PDF</a></li>
+          <li class="active"><a href="{{ url_for('encrypt_pdf')}}">Encrypt PDF</a></li>
+          <li class="active"><a href="{{ url_for('rotate_pdf')}}">Rotate PDF</a></li>
+          <li class="dropdown"><a href="#">Compression Tools<i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="{{ url_for('compress_pdf')}}">Compress PDF</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('img_compression')}}">Compress Image</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Convert PDF</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <a ><h4>From PDF Conversion</h4></a>
+                <li class="divider"></li>
+                <li><a class="dropdown-item" href="{{ url_for('pdf_doc')}}">PDF To DOCx</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pdf_csv')}}">PDF To CSV</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pdf_img')}}">PDF To Image</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pdf_ppt')}}">PDF To PPTx</a></li>
+                <li class="divider"></li>
+                <li class="divider"></li>
+                <a ><h4>To PDF Conversion</h4></a>
+                <li class="divider"></li>
+                <li><a class="dropdown-item" href="{{ url_for('img_pdf')}}">Image To PDF</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('csv_pdf')}}">CSV To PDF</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('ppt_pdf')}}">PPT To PDF</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('doc_pdf')}}">DOCx To PDF</a></li>
+            </ul>
+            <li class="dropdown"><a href="#"><span>Other Conversion Tools</span> <i class="bi bi-chevron-down"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="{{ url_for('img_ppt')}}">Image To PPTx</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('ppt_img')}}">PPTx To Image</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('jpg_png')}}">JPG To PNG</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('png_jpg')}}">PNG To JPG</a></li>
+                </ul>
+            <li class="dropdown"><a href="#"><span>Media Conversion Tools</span> <i class="bi bi-chevron-down"></i></a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="{{ url_for('mp4_mp3')}}">MP4 to MP3</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('mp4_wav')}}">MP4 To WAV</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('wav_text')}}">WAV To TEXT</a></li>
+              </ul>
+          </li>
+        </ul>
+      </nav><!-- .navbar -->
+    </div>
+</header><!-- End Header -->
+
+
+
+<div class="dropzone">
+    <h1> Merge PDF</h1>
+    <img src="https://blog.aspose.com/2020/06/18/merge-two-or-multiple-pdf-files-using-java/images/Merge-PDF-Files-into-Single-PDF.jpg" class="upload-icon" />
+    <form action = "/merge_pdf/" method = "post" enctype="multipart/form-data">
+        <p><strong>[ Upload only 'pdf' Format ] </strong></p>
+        <input type="file" class="btn btn-filestack_1" style="width: 250px; height: 40px;" name="file[]" multiple="" accept=".pdf"/>
+        <br>
+        <input type = "submit" class="btn btn-filestack btn-widget" value=" Download Merged PDF File">
+    </form>
+</div>
+</li>
+
+</body>
+</html>

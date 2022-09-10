@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>One Shop Converter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <title>BizLand Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href ="{{ url_for('static', filename='vendor/aos/aos.css') }}"  rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.btn-filestack:hover {
+  background-color: #cc4343;
+  box-shadow: 0 2px 2px 0 rgba(256,256,256,0.24), 0 6px 6px 0 rgba(231, 223, 223, 0.19);
+
+}
+
+.btn-filestack_1 {
+  background-color: rgb(255, 255, 255);
+  border-color: #524f4e;
+  border: 1px solid rgb(68, 65, 65);
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.btn-widget, .btn-widget:active {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 17px;
+  padding: 4px 30px 5px 40px;
+  height: 34px;
+  /* Set the path of your logo */
+  background-image: url('https://www.filestack.com/favicon.ico');
+  background-size: 16px 16px;
+  background-position: 16px 8px;
+  background-repeat: no-repeat;
+  line-height: 23px;
+}
+
+.btn-widget::after {
+  position: relative;
+  content: "\21a9";
+  color: rgb(239,74,37);
+  top: -0px;
+  right: -11px;
+  width: 1px;
+  height: 12px;
+  background: 0 0 no-repeat;
+}
+
+.upload-icon {
+	margin: 25px 2px 10px 2px;
+}
+
+.img-circle {
+	border-radius:100px
+}
+
+.btn-rounded{
+  border-radius:100px;
+}
+
+
+.shadow-custom {
+  box-shadow: 0 2px 5px 0 rgba(60, 255, 0, 0.966), 0 3px 10px 5px rgba(8, 199, 224, 0.849) !important;
+}
+
+.shadow-pdf {
+  box-shadow: 0 2px 5px 0 rgba(7, 235, 235, 0.966), 0 3px 10px 5px rgba(224, 40, 8, 0.849) !important;
+}
+
+.h2{
+  font: 50px Times, sans-serif;
+}
+
+.colum {
+  width: 50%;
+}
+
+.textSelection {
+  width: 10px;
+  height: 30px;
+  word-wrap: break-word
+}
+
+.textcentre{
+  text-align: center;
+  margin-top: 30px;
+}
+
+.body {
+  background: url('https://wallpaperaccess.com/full/1159285.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+
+.logo1 {
+
+width: auto;
+height: 80px;
+}
+
+  </style>
+</head>
+<body>
+
+
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center" style = "margin-right: 5px;">
+      <div class="container d-flex align-items-center justify-content-between ">
+
+        <a href="{{ url_for('to_home')}}" ><img class="logo1" style="margin-left:-100px" src="/static/img/trafo.png" ></a>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li class="active"><a href="{{ url_for('to_home')}}">Home</a></li>
+            <li class="active"><a href="{{ url_for('merge_pdf')}}">Merge PDF</a></li>
+            <li class="active"><a href="{{ url_for('split_pdf')}}">Split PDF</a></li>
+            <li class="active"><a href="{{ url_for('encrypt_pdf')}}">Encrypt PDF</a></li>
+            <li class="active"><a href="{{ url_for('rotate_pdf')}}">Rotate PDF</a></li>
+            <li class="dropdown"><a href="#">Compression Tools<i class="bi bi-chevron-down"></i></a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="{{ url_for('compress_pdf')}}">Compress PDF</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('img_compression')}}">Compress Image</a></li>
+              </ul>
+            </li>
+              <li class="dropdown"><a href="#">Convert PDF<i class="bi bi-chevron-down"></i></a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <a ><h4>From PDF Conversion</h4></a>
+                  <li class="divider"></li>
+                  <li><a class="dropdown-item" href="{{ url_for('pdf_doc')}}">PDF To DOCx</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('pdf_csv')}}">PDF To CSV</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('pdf_img')}}">PDF To Image</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('pdf_ppt')}}">PDF To PPTx</a></li>
+                  <li class="divider"></li>
+                  <li class="divider"></li>
+                  <a ><h4>To PDF Conversion</h4></a>
+                  <li class="divider"></li>
+                  <li><a class="dropdown-item" href="{{ url_for('img_pdf')}}">Image To PDF</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('csv_pdf')}}">CSV To PDF</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('ppt_pdf')}}">PPT To PDF</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('doc_pdf')}}">DOCx To PDF</a></li>
+              </ul>
+              <li class="dropdown"><a href="#">Other Conversion Tools <i class="bi bi-chevron-down"></i></a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ url_for('img_ppt')}}">Image To PPTx</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('ppt_img')}}">PPTx To Image</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('jpg_png')}}">JPG To PNG</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('png_jpg')}}">PNG To JPG</a></li>
+                  </ul>
+              <li class="dropdown"><a href="#">Media Conversion Tools<i class="bi bi-chevron-down"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ url_for('mp4_mp3')}}">MP4 to MP3</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('mp4_wav')}}">MP4 To WAV</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('wav_text')}}">WAV To TEXT</a></li>
+                </ul>
+            </li>
+          </ul>
+        </nav><!-- .navbar -->
+      </div>
+</header><!-- End Header -->
+
+
+<!-- Dividing Line -->
+<li class="divider"></li>
+
+<div class="body">
+  <!-- junmbotron -->
+  <div class="container">
+    
+    <!-- Jumbotron -->
+    <div class="bg-image p-5 text-center text-white" 
+        
+        style="background-image: url('https://images.pexels.com/photos/1629236/pexels-photo-1629236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+        <p><h2 class="h2">Every tool you need to work with PDFs in one place</h2></p>
+        
+      <p><h3>Every tool you need to use PDFs, at your fingertips. All are 100% FREE and easy to use! Merge, split, compress, convert, rotate, lock  PDFs with just a few clicks.</h3></p>
+      
+    </div>
+
+  </div>
+
+
+
+<li class =" btn-rounded bg-white shadow-pdf textcentre " style="margin-left: 70px;height: 70px;margin-right: 80px;">
+<h1 style ="margin-top:5px">PDFs Editing Tools</h1></li>
+
+  <br>
+  <br>
+  <div class=" p-3 shadow-custom bg-white rounded-start" style= "margin-left: 70px;margin-right: 80px;">
+    <!-- start 1st Group of buttons -->
+    <div class="btn-group">
+
+      <a href="{{ url_for('merge_pdf') }}" id="2">
+        <button class="btn"  style="width: 400px; height: 200px;">
+          <div class="col text-start"><img src="https://play-lh.googleusercontent.com/-F_meVEbaXcYDfblWzI_nMhdi_Q3K5NClXbQ90ZTJA90RZbN76ZPcfCNgYS_C2xPLTs=w240-h480-rw" style="width: 50px; height: 50px;" alt=""></div>
+          <h2 style="text-align: start;" >Merge PDFs </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Combines PDFs in order with easiest Merge PDF available</h5>
+        </button>
+      </a>
+    
+      <a href="{{ url_for('split_pdf') }}" id='1'>
+        <button class="btn" style="width: 400px; height: 200px;">
+          <div class="col text-start" ><img src="https://cdn-icons-png.flaticon.com/512/1178/1178226.png" style="width: 50px; height: 50px;"  alt=""></div>
+          <h2 style="text-align: start;" >Splits PDF</h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Separate whole set for easy conversion into independant PDF files</h5>
+        </button>
+      </a>
+      
+      <a href="{{ url_for('encrypt_pdf') }}" id='3'>
+        <button class="btn" style="width: 400px; height: 200px;" >
+          <div class="col text-start" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-35rZX6nOBU33yNHRARlhxeAHnPh-VwBlM5SCn3LfEZ2Y90gJYMwZF87_wCzovAEmOYw&usqp=CAU" style="width: 50px; height: 50px;" alt=""></div>
+            <h2 style="text-align: start;" >Secure Your PDF</h2>
+            <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Protect PDF file with Password to prevent unauthorised access</h5>
+        </button>
+      </a>
+    </div>
+    <!-- end 1st Group of buttons -->
+
+    <!-- start 2nd Group of buttons -->
+    <div class="btn-group">
+      <a href="{{ url_for('rotate_pdf') }}" id='1' >
+        <button class="btn" style="width: 400px; height: 200px;">
+          <div class="col text-start" ><img src="https://us.123rf.com/450wm/dedegrphc/dedegrphc2003/dedegrphc200302847/142335691-angle-90-degrees-sign-icon-geometry-math-symbol-right-angle-classic-flat-icon-colored-circles-vector.jpg?ver=6" style="width: 50px; height: 50px;" alt=""></div>
+            <h2 style="text-align: start;">Rotate PDF </h2>
+            <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Rotate your PDF the way you want</h5>
+        </button>
+      </a>
+    
+      <a href="{{ url_for('compress_pdf') }}" id='2' >
+        <button class="btn" style="width: 400px; height: 200px;">
+          <div class="col text-start" ><img src="https://icon-library.com/images/icon-file-size/icon-file-size-16.jpg" style="width: 50px; height: 50px;" alt=""></div>
+          <h2 style="text-align: start;">Compress PDF Size </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Compress PDF file size while optimizing for maximal PDF quality</h5>
+        </button>
+      </a>
+      <a href="{{ url_for('img_compression') }}" id='2' >
+        <button class="btn" style="width: 400px; height: 200px;">
+          <div class="col text-start" ><img src="https://cdn-icons-png.flaticon.com/512/1387/1387554.png" style="width: 70px; height: 50px;" alt="" ></div>
+          <h2 style="text-align: start;">Image Size Compression </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">You can easily compress size of Image format .</h5>
+        </button>
+      </a>
+
+    </div>
+    <!-- end 2nd Group of buttons -->
+
+
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <li class = " btn-rounded bg-white shadow-pdf textcentre " style="margin-left: 70px;height: 70px;margin-right: 80px;">
+    <h1 style ="margin-top:5px">From PDFs Conversion Tools</h1></li>
+  <br>
+  <br>
+  <div class=" p-3 shadow-custom bg-white rounded-start" style= "margin-left: 70px;margin-right: 80px;">
+    <!-- start 1st Group of buttons -->
+    <div class="btn-group">
+      <a href="{{ url_for('pdf_doc') }}" id='1'>
+        <button class="btn" style="width: 400px; height: 200px;">
+          <div class="col text-start" ><img src="http://www.flyingbee.com//uploads/products/160304033126-pdf-to-word-flyingbee-512.png" style="width: 50px; height: 50px;"  alt=""></div>
+          <h2 style="text-align: start;">PDF to DOCx Convert </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Easily convert your PDF file into easy to edit DOC documents</h5>
+        </button>
+      </a>
+      
+      <a href="{{ url_for('pdf_csv') }}" id='2' >
+        <button class="btn" style="width: 400px; height: 200px;">
+          <div class="col text-start" ><img src="https://static.thenounproject.com/png/56841-200.png" style="width: 50px; height: 50px;" alt=""></div>
+          <h2 style="text-align: start;">PDF To CSV Convert </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Pull the data straight from PDF into Excel spreadsheet in few short seconds</h5>
+        </button>
+      </a>
+      
+      <a href="{{ url_for('pdf_img') }}" id='3' >
+        <button class="btn" style="width: 400px; height: 200px;">
+          <div class="col text-start" ><img src="https://64bitapps.com/wp-content/uploads/2018/03/Icon1024.png" style="width: 50px; height: 50px;" alt=""></div>
+          <h2 style="text-align: start;">PDF To JPG Convert </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Convert your each PDF pages into JPG or extract all images contained in PDF</h5>
+        </button>
+      </a>
+    </div>
+    <!-- end 1st Group of buttons -->
+
+    <!-- Start 2nd Group of buttons -->
+    <div class="btn-group">
+      <a href="{{ url_for('pdf_ppt') }}" id='1' >
+        <button class="btn" style="width: 400px; height: 200px;" >
+          <div class="col text-start" ><img src="https://www.talkhelper.com/wp-content/uploads/2020/10/pdf-to-powerpoint.png" style="width: 70px; height: 50px;" alt=""></div>
+          <h2 style="text-align: start;">PDF to PPTx Convert </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Turn your PDF files into easy to edit PPT and PPTX slideshows.</h5>
+        </button>
+      </a>
+    </div>
+    <!-- End 2nd Group of buttons -->
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <li class = " btn-rounded bg-white shadow-pdf textcentre " style="margin-left: 70px;height: 70px;margin-right: 80px;">
+    <h1 style ="margin-top:5px">To PDFs Conversion Tools</h1></li>
+  <br>
+  <br>
+  <div class=" p-3 shadow-custom bg-white rounded-start" style= "margin-left: 70px;margin-right: 80px;">
+    <!-- start 1st Group of buttons -->
+    <div class="btn-group">
+      <a href="{{ url_for('img_pdf') }}" id='1' >
+        <button class="btn" style="width: 400px; height: 200px;" >
+          <div class="col text-start" ><img src="https://ventsmagazine.com/wp-content/uploads/2020/05/jpgtopdf.png" style="width: 70px; height: 50px;" alt=""></div>
+          <h2 style="text-align: start;">Image To PDF Convert </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Convert JPG images to PDF in seconds. Easily adjust orientation and margins.</h5>
+        </button>
+      </a>
+      
+      <a href="{{ url_for('csv_pdf') }}" id='2' >
+        <button class="btn" style="width: 400px; height: 200px;" >
+          <div class="col text-start" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRYnebYt8Pg2ovRpbS30I1PapphtfuRN3EA&usqp=CAU" style="width: 70px; height: 50px;" alt=""></div>
+          <h2 style="text-align: start;">CSV To PDF Convert </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Make EXCEL spreadsheets easy to read by converting them to PDF.</h5>
+        </button>
+      </a>
+      
+      <a href="{{ url_for('ppt_pdf') }}" id='3'>
+        <button class="btn" style="width: 400px; height: 200px;" >
+          <div class="col text-start" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5rasUdCUiouVOmnuWqx3f9GgvalTMJdng2Q&usqp=CAU" style="width: 70px; height: 50px;"  alt=""></div>
+          <h2 style="text-align: start;">PPTx To PDF Convert </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Make PPT and PPTX slideshows easy to view by converting them to PDF.</h5>
+        </button>
+      </a>
+    </div>
+    <!-- End 1st Group of buttons -->
+
+    <!-- start 2nd Group of buttons -->
+    <a href="{{ url_for('doc_pdf') }}" id='1' >
+      <button class="btn" style="width: 400px; height: 200px;" >
+        <div class="col text-start" ><img src="https://cseinfinity.com/media/word-to-pdf_yIodKgb.png" style="width: 70px; height: 50px;" alt=""></div>
+        <h2 style="text-align: start;">DOCx to PDF Convert </h2>
+        <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Make DOC and DOCX files easy to read by converting them to PDF.</h5> 
+      </button>
+    </a>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <li class = " btn-rounded bg-white shadow-pdf textcentre " style="margin-left: 70px;height: 70px;margin-right: 80px;">
+    <h1 style ="margin-top:5px">Other Conversion Tools</h1></li>
+  <br>
+  <br>
+  <div class=" p-3 shadow-custom bg-white rounded-start" style= "margin-left: 70px;margin-right: 80px;">
+    <!-- start 1st Group of buttons -->
+    <div class="btn-group">
+      <a href="{{ url_for('img_ppt') }} "  id='1'>
+        <button class="btn" style="width: 400px; height: 200px;">
+          <div class="col text-start" ><img src="https://developers.zamzar.com/assets/app/img/convert/ppt.png" style="width: 50px; height: 50px;" alt=""></div>
+          <h2 style="text-align: start;">Image To PPTx Convert </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">You can easily convert your Image files to PPT with this online tool.</h5>
+        </button>
+      </a>
+      
+      <a href="{{ url_for('ppt_img') }}" id='2'>
+        <button class="btn" style="width: 400px; height: 200px;">
+          <div class="col text-start" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp3OC8l2leC-JF9Wf_HI4XOIIx7oateon1LQ&usqp=CAU" style="width: 70px; height: 60px;"  alt=""></div>
+          <h2 style="text-align: start;">PPTx To Image Convert </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Convert your file from Presentation File to JPG format with this PPT to JPG Tool</h5>
+        </button>
+      </a>
+
+      <a href="{{ url_for('jpg_png') }}" id='3' >
+        <button class="btn" style="width: 400px; height: 200px;">
+          <div class="col text-start" ><img src="https://i.ytimg.com/vi/HAufhfCni9o/maxresdefault.jpg" style="width: 70px; height: 50px;" alt=""></div>
+          <h2 style="text-align: start;">JPG To PNG Convert </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Secure and easy way to Convert your JPG to PNG file in seconds!</h5>
+        </button>
+      </a>
+
+    </div>
+    <!-- End 1st Group of buttons -->
+
+    <!-- start 2nd Group of buttons -->
+    <div class="btn-group">
+      <a href="{{ url_for('png_jpg') }}" id='1' >
+        <button class="btn" style="width: 400px; height: 200px;">
+          <div class="col text-start" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmz5XqNlOcF0WZDE0itYkKVHv6exwXAJCMdgfYTpP5H7y0DurCHOkC0yVqLczKK4jqEgY&usqp=CAU" style="width: 70px; height: 50px;" alt="" ></div>
+          <h2 style="text-align: start;">PNG to JPG Convert </h2>
+          <h5 class = "text-wrap" style="text-align: start;width: 30rem;">You can easily transform PNG to JPG format with png to jpg converter.</h5>
+        </button>
+      </a>
+    </div>
+  </div>
+  <br>
+  <br>
+
+
+<li class = " btn-rounded bg-white shadow-pdf textcentre " style="margin-left: 70px;height: 70px;margin-right: 80px;">
+  <h1 style ="margin-top:5px">Media Conversion Tools</h1></li>
+<br>
+<br>
+<div class=" p-3 shadow-custom bg-white rounded-start" style= "margin-left: 70px;margin-right: 80px;">
+  <!-- start 1st Group of buttons -->
+  <div class="btn-group">
+    <a href="{{ url_for('mp4_mp3') }} "  id='1'>
+      <button class="btn" style="width: 400px; height: 200px;">
+        <div class="col text-start" ><img src="https://www.joyoshare.com/images/resource/mp4-to-mp3.jpg" style="width: 110px; height: 40px;" alt=""></div>
+        <h2 style="text-align: start;">MP4 To MP3 Convert </h2>
+        <h5 class = "text-wrap" style="text-align: start;width: 30rem;">You can easily convert your Image files to PPT with this online tool.</h5>
+      </button>
+    </a>
+    
+    <a href="{{ url_for('mp4_wav') }}" id='2'>
+      <button class="btn" style="width: 400px; height: 200px;">
+        <div class="col text-start" ><img src="https://www.talkhelper.com/wp-content/uploads/2019/12/mp4-to-wav-converter.png" style="width: 110px; height: 70px;"  alt=""></div>
+        <h2 style="text-align: start;">MP4 To WAV Convert </h2>
+        <h5 class = "text-wrap" style="text-align: start;width: 30rem;">Convert your file from Presentation File to JPG format with this PPT to JPG Tool</h5>
+      </button>
+    </a>
+
+    
+    <a href="{{ url_for('wav_text') }}" id='1' >
+      <button class="btn" style="width: 400px; height: 200px;">
+        <div class="col text-start" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmz5XqNlOcF0WZDE0itYkKVHv6exwXAJCMdgfYTpP5H7y0DurCHOkC0yVqLczKK4jqEgY&usqp=CAU" style="width: 70px; height: 50px;" alt="" ></div>
+        <h2 style="text-align: start;">WAV to Text Convert </h2>
+        <h5 class = "text-wrap" style="text-align: start;width: 30rem;">You can easily transform PNG to JPG format with png to jpg converter.</h5>
+      </button>
+    </a>
+    
+  </div>
+  <!-- End 1st Group of buttons -->
+
+  <!-- start 2nd Group of buttons -->
+
+</div>
+<br>
+<br>
+</div>
+</div>
+
+</body>
+</html>
+
+
